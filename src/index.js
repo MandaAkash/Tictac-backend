@@ -4,7 +4,7 @@ import { StreamChat } from "stream-chat";
 import { v4 as uuidv4 } from "uuid";
 import bcrypt from "bcrypt";
 const app = express();
-
+const port=process.env.port||3001
 app.use(cors());
 app.use(express.json());
 const api_key = "2yaxbt58v8j8";
@@ -50,6 +50,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log("Server is running on port 3001");
 });
